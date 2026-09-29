@@ -1,0 +1,20 @@
+{
+  "name": "robacena-whatsapp-ia",
+  "version": "1.0.0",
+  "description": "Atendente WhatsApp IA RobacenaTV",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^6.7.21",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "pino": "^9.9.4",
+    "pg": "^8.16.3"
+  }
+}
