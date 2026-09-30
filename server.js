@@ -24,10 +24,17 @@ const WHATSAPP_NUMBER = String(
   process.env.WHATSAPP_NUMBER || ""
 ).replace(/\D/g, "");
 
-const ROBACENATV_URL =
+onst ROBACENATV_URL =
   process.env.ROBACENATV_URL ||
   "https://robacenatv.onrender.com";
 
+const OPENAI_API_KEY =
+  process.env.OPENAI_API_KEY || "";
+
+const OPENAI_MODEL =
+  process.env.OPENAI_MODEL || "gpt-5.6-luna";
+
+// No Render com Persistent Disk:
 // No Render com Persistent Disk:
 const SESSION_ROOT =
   process.env.SESSION_PATH ||
