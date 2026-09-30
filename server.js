@@ -1001,25 +1001,49 @@ async function connectWhatsApp() {
             continue;
           }
 
-          // ===========================================
-          // CONVERSA LIVRE
-          //
-          // IA SERÁ CONECTADA NA PRÓXIMA ETAPA.
-          // ===========================================
+// ===========================================
+// CONVERSA LIVRE → CÉREBRO IA
+// ===========================================
 
-          await sendText(
-            jid,
+try {
 
-            `🤖 Recebi sua mensagem.
+  console.log(
+    "🧠 Enviando mensagem para o cérebro IA..."
+  );
 
-Meu atendimento automático está online.
+  const aiResponse =
+    await askBrain(
+      jid,
+      text
+    );
 
-Digite *menu* para ver as opções disponíveis.
+  await sendText(
+    jid,
+    aiResponse
+  );
 
-🧠 O módulo de conversa inteligente será conectado na próxima etapa.`
-          );
+  console.log(
+    "🧠 Resposta IA enviada."
+  );
 
-        } catch (error) {
+} catch (brainError) {
+
+  console.error(
+    "❌ Cérebro IA:",
+    brainError.message
+  );
+
+  await sendText(
+    jid,
+    `⚠️ Meu atendimento inteligente está temporariamente indisponível.
+
+As opções automáticas continuam funcionando normalmente.
+
+Digite *menu* para continuar.`
+  );
+
+} 
+       } catch (error) {
 
           console.error(
             "❌ Erro ao processar mensagem:",
